@@ -1,0 +1,25 @@
+version: '3.7' 
+services:
+  db: 
+    image: postgres:16 
+    container_name: stand_db 
+    env_file:
+      - .env-non-dev
+
+  redis: 
+    image: redis:7 
+    container_name: stand_redis
+
+  stand_api: 
+    image: stand_api
+    build: 
+      context: . 
+    container_name: stand_api_app
+    env_file:
+      - .env-non-dev
+    depends_on:
+      - db 
+      - redis
+    command: ["/standshop/docker/app.sh"]
+    ports: 
+      - 7777:8000
