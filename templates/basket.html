@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&display=swap" rel="stylesheet">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="{{ url_for('get_style_basket_css') }}" />
+    <title>StandShop :: Корзина</title>
+    <style>
+        .main {
+            background-image: url("{{ url_for('get_back_image') }}");
+        }
+    </style>
+</head>
+<body>
+    <main class="main">
+        <div class="overlay"></div>
+        <div class="main__wrapper">
+            <div class="left">
+                <h1 class="left__h1">Корзина</h1>
+                <hr>
+                {% for key, value in products.items() %}
+                    <div class="product">
+                        <img class="product__img" src="{{ url_for('get_gold_image') }}"/>
+                        <div class="product__wrapper">
+                            <div>
+                                <label class="product__label">Название:</label>
+                                <p class="left__p">{{ key }} голды</p> 
+                            </div>
+                            <div>
+                                <label class="product__label">Цена:</label>
+                                <p class="left__p">{{ value["total_price"] }}₴</p>
+                            </div>
+                            <div>
+                                <label class="product__label">Количество:</label>
+                                <p class="left__p">{{ value["count"]}}</p>
+                            </div>
+                            <a href="{{ url_for('render_delete_product', product_id=value['id']) }}" class="delete_product">Удалить</a>
+                        </div>
+                    </div>
+                {% endfor %}
+                <div class="options">
+                    {% if products != {} %}
+                        <a href="{{ url_for('render_delete_all_products') }}" class="delete_product">Удалить все</a>
+                    {% endif %}
+                    <a href="{{ url_for('render_main') }}" class="go_back">Вернуться на главную</a>
+                </div>
+            </div>
+            <div class="line"></div>
+            <div class="right">
+                <p class="right__p_price">ИТОГО: {{ full_price }}₴</p>
+                <hr>
+                <form>
+                    <input class="right__input" placeholder="Игровой никнейм" required />
+                    <button class="go" type="submit">Продолжить</button>
+                </form>
+            </div>
+        </div>
+    </main>
+</body>
+</html>
