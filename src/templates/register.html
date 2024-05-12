@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&display=swap" rel="stylesheet">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>StandShop :: Регистрация</title>
+    <link rel="stylesheet" href="{{ url_for('get_style_reg_css') }}" />
+    <style>
+        .main {
+            background-image: url("{{ url_for('get_back_image') }}");
+        }
+    </style>
+</head>
+<body>
+    <main class="main">
+        <div class="overlay"></div>
+        <div class="main__wrapper">
+            <div id="login-form">
+                <h1>Регистрация на сайте</h1>
+                <fieldset>
+                    <form action="/auth/register/" method="POST">
+                        {% for message in get_flash_message(request) %}
+                            <p class="message">{{ message.message }}</p>
+                        {% endfor %}
+                        <input type="text" placeholder="Username" name="username" required />
+                        <input type="email" placeholder="Email" name="email" required />
+                        <input type="password" placeholder="Password" name="password" required />
+                        <input type="submit" value="Создать">
+                        <footer class="clearfix">
+                            <p><span class="info">?</span><a href="{{ url_for('login_page') }}">Есть аккаунт?</a></p>
+                        </footer>
+                    </form>
+                </fieldset>
+            </div>
+        </div>
+    </main>
+</body>
+</html>
