@@ -90,3 +90,50 @@ body {
 .exit:hover {
     background: linear-gradient(90deg, #ff4141 0, #8a0909);
 }
+
+@media (max-width: 1250px) {
+    .header__wrapper {
+        padding: 100px;
+        max-width: 1000px;
+    }
+}
+
+@media (max-width: 1180px) {
+    .header__wrapper {
+        padding: 100px;
+        max-width: 900px;
+    }
+}
+
+@media (max-width: 480px) {
+    .header__h1 {
+        font-size: 40px;
+    }
+    .profile_name {
+        font-size: 18px;
+    }
+    .exit {
+        padding: 8px 20px;
+    }
+}
+
+@media (max-width: 420px) {
+    .header__wrapper {
+        padding: 100px;
+        max-width: 950px;
+    }
+
+    .header__h1 {
+        font-size: 30px;
+    }
+    .profile_name {
+        font-size: 16px;
+    }
+    .exit {
+        padding: 8px 18px;
+    }
+    .header__a {
+        padding: 8px 20px;
+        font-size: 13px;
+    }
+}
