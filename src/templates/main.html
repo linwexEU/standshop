@@ -54,7 +54,7 @@
             <div class="cards">
                 {% for product in products %}
                     <div class="card">
-                        <img src="{{ url_for('get_gold_image') }}" />
+                        <img class="card__image" src="{{ url_for('get_gold_image') }}" />
                         <p class="amount">{{ product.name }}🧈</p>
                         <p class="price">{{ product.price }}₴</p>
                         <form action="/basket/add/{{product.id}}/" method="POST">
