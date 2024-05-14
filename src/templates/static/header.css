@@ -93,21 +93,26 @@ body {
 
 @media (max-width: 1250px) {
     .header__wrapper {
-        padding: 100px;
+        padding: 300px 0px 300px 0px;
         max-width: 1000px;
     }
 }
 
 @media (max-width: 1180px) {
     .header__wrapper {
-        padding: 100px;
-        max-width: 900px;
+        padding: 200px 50px 200px 50px;
     }
 }
 
 @media (max-width: 480px) {
     .header__h1 {
         font-size: 40px;
+    }
+    .login {
+        font-size: 15px;
+    }
+    .register {
+        font-size: 15px;
     }
     .profile_name {
         font-size: 18px;
@@ -119,7 +124,6 @@ body {
 
 @media (max-width: 420px) {
     .header__wrapper {
-        padding: 100px;
         max-width: 950px;
     }
 
