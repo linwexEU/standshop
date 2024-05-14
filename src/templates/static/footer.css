@@ -24,3 +24,28 @@
     color: #00b5ad;
     font-family: "Roboto", sans-serif;
 }
+
+@media (max-width: 1250px) {
+    .footer__wrapper {
+        max-width: 1000px;
+    }
+}
+
+@media (max-width: 1040px) {
+    .footer__wrapper {
+        max-width: 800px;
+    }
+}
+
+@media (max-width: 860px) {
+    .footer__wrapper {
+        max-width: 600px;
+    }
+}
+
+@media (max-width: 650px) {
+    .footer__wrapper {
+        max-width: 400px;
+        padding: 20px;
+    }
+}
