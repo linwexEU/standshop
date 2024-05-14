@@ -166,3 +166,23 @@ hr {
     font-family: "Roboto", sans-serif;
     font-weight: bold;
 }
+
+@media (max-width: 780px) {
+    .main__wrapper {
+        flex-direction: column;
+    }
+}
+
+@media (max-width: 480px) {
+    .main__wrapper {
+        max-width: 500px;
+        padding: 20px;
+    }
+    .product {
+        max-width: 300px;
+    }
+    .product__img {
+        width: 100px;
+        height: 100px;
+    }
+}
